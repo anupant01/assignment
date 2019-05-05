@@ -28,7 +28,28 @@ app.post('/v1/users',function(req,res,next){
 })
 
 
-//
+//sequilize connection part
+
+const Sequelize = require('sequelize');
+
+// Option 1: Passing parameters separately
+const sequelize = new Sequelize('database', 'username', 'password', {
+  host: 'localhost',
+  dialect: /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.listen(3001);
 
 console.log('server reunning');
