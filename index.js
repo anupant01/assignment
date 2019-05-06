@@ -4,6 +4,10 @@ var app = new express();
 
 var bodyParser = require('body-parser');
 
+var dbconfig = require('./configs/dbconfig')
+
+var test = require('./models/UsersModels')
+
 
 
 app.use(function (req,res,next) {
@@ -28,15 +32,6 @@ app.post('/v1/users',function(req,res,next){
 })
 
 
-//sequilize connection part
-
-const Sequelize = require('sequelize');
-
-// Option 1: Passing parameters separately
-const sequelize = new Sequelize('database', 'username', 'password', {
-  host: 'localhost',
-  dialect: /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
-});
 
 
 
