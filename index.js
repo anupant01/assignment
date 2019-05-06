@@ -4,9 +4,12 @@ var app = new express();
 
 var bodyParser = require('body-parser');
 
-var dbconfig = require('./configs/dbconfig')
+// var dbconfig = require('./configs/dbconfig')
 
-var test = require('./models/UsersModels')
+// var test = require('./models/UserModels')
+
+
+var userControl = require('./controllers/UserController')
 
 
 
@@ -24,9 +27,10 @@ app.use(bodyParser.json());
 
 
 
-app.post('/v1/users',function(req,res,next){
+app.post('/v1/users',
+	userControl.registerUser,function(req,res,next){
 
-	console.log(req)
+	// console.log(req)
 
 
 })
@@ -45,6 +49,7 @@ app.post('/v1/users',function(req,res,next){
 
 
 
-app.listen(3001);
+app.listen(6000);
 
-console.log('server reunning');
+
+console.log('server running');

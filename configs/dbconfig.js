@@ -3,7 +3,7 @@
 var Sequelize = require('sequelize');
 
 // Option 1: Passing parameters separately
-var sequelize = new Sequelize('softwarica', 'root',' ', {
+var sequelize = new Sequelize('softwarica', 'root','anu', {
   host: 'localhost',
   dialect: 'mysql',/* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
   logging:false 
@@ -25,7 +25,7 @@ console.log('db successfully connected');
 
 //like throw
 module.exports ={
-	sequelize,
-	Sequelize
+	Sequelize,
+	sequelize
 
 }
