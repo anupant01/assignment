@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.post('/v1/users',
 	userControl.registerUser,function(req,res,next){
 
-	// console.log(req)
+	console.log(req.body)
 
 
 })
@@ -49,7 +49,7 @@ app.post('/v1/users',
 
 
 
-app.listen(6000);
+app.listen(3000);
 
 
 console.log('server running');

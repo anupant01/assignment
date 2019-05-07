@@ -1,24 +1,23 @@
 var usermodel = require('../models/UserModels');
 
 
-function registerUser(){
+function registerUser(req,res,next){
 usermodel.User.create({
 
-	username : 'anu',
-	
-	address:'jorpati',
+	username : req.body.username,
+	password:req.body.password,
+	address:req.body.address
 
 })
 
 .then(function(result){
-	// console.log(result);
+	console.log(result);
 })
 .catch(function(err)
 {
 	console.log(err);
 })
 
-//password : 'anu',
 }
 
 module.exports = {

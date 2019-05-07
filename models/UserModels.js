@@ -15,9 +15,15 @@ const User = db.sequelize.define('user', {
     type: db.Sequelize.STRING,
     allowNull: false
   },
+
+  password: {
+    type: db.Sequelize.STRING,
+    allowNull: false
+  },
  
   address: {
-    type: db.Sequelize.STRING
+    type: db.Sequelize.STRING,
+    allowNull: false
     // allowNull defaults to true
   }
 },
@@ -26,7 +32,7 @@ const User = db.sequelize.define('user', {
   // options
 
   freezeTableName:true,
-  tableName:'my_users'
+  tableName:'users_table'
 
 });
 
