@@ -28,28 +28,29 @@ app.use(bodyParser.json());
 
 
 app.post('/v1/users',
+	userControl.hashGenerator,
 	userControl.registerUser,function(req,res,next){
 
-	console.log(req.body)
+		res.status(201);
+		res.send({"message": "User was registered"});
+		// res.status(201);
+		// res.send({"sde":"asd"});
 
+	// console.log(req.body)
 
+})
+
+app.use(function(err,req,res,next){
+
+	// console.log(err.status);
+	// console.log(err.message);
+
+	res.status(err.status);
+	res.send({"message":err.message})
 })
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-app.listen(3000);
-
+app.listen(process.env.PORT);
 
 console.log('server running');
